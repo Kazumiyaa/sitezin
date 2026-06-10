@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>kazumiya</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background: radial-gradient(circle at center, #200000 0%, #000 70%);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+  transition:0.2s;
+}
+
+/* 🌫️ FUNDO PULSANDO */
+body.pulse{
+  background: radial-gradient(circle at center, #300000 0%, #000 70%);
+}
+
+/* ✨ PARTICULAS */
+.particles{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.particles::before,
+.particles::after{
+  content:"";
+  position:absolute;
+  width:200%;
+  height:200%;
+  background-image:radial-gradient(white 1px, transparent 1px);
+  background-size:40px 40px;
+  opacity:0.05;
+  animation:move 70s linear infinite;
+}
+
+.particles::after{
+  animation-duration:120s;
+  opacity:0.03;
+}
+
+@keyframes move{
+  from{transform:translate(0,0);}
+  to{transform:translate(-200px,-200px);}
+}
+
+/* 🩸 SANGUE REALISTA */
+.blood{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+.blood span{
+  position:absolute;
+  top:-80px;
+  width:14px;
+  height:14px;
+  background:radial-gradient(circle, rgba(255,0,0,0.9), rgba(120,0,0,0.2));
+  border-radius:50%;
+  filter:blur(1px);
+  opacity:0.8;
+  animation:drip linear infinite;
+}
+
+.blood span:nth-child(1){left:12%; animation-duration:7s;}
+.blood span:nth-child(2){left:28%; animation-duration:9s;}
+.blood span:nth-child(3){left:45%; animation-duration:6s;}
+.blood span:nth-child(4){left:62%; animation-duration:8s;}
+.blood span:nth-child(5){left:80%; animation-duration:7.5s;}
+
+@keyframes drip{
+  0%{
+    transform:translateY(-120px) scale(1);
+    opacity:0;
+  }
+  10%{opacity:0.9;}
+  80%{opacity:0.6;}
+  100%{
+    transform:translateY(120vh) scale(1.3);
+    opacity:0;
+  }
+}
+
+/* 🩸 VINHETA SUAVE (BORDAS SUJAS) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.6) 100%);
+}
+
+/* CONTRATO */
+.contract-screen{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+  text-align:center;
+}
+
+.contract-box{width:280px;}
+
+.contract-box h2{
+  color:#ff2a2a;
+  margin-bottom:10px;
+}
+
+.contract-text{
+  font-size:0.9rem;
+  opacity:.7;
+  min-height:40px;
+  margin-bottom:10px;
+}
+
+.contract-box input{
+  width:100%;
+  padding:10px;
+  background:#111;
+  border:1px solid rgba(255,0,0,0.3);
+  color:#fff;
+  border-radius:8px;
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.contract-box button{
+  width:100%;
+  padding:10px;
+  background:rgba(255,0,0,0.1);
+  border:1px solid rgba(255,0,0,0.3);
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* SITE */
+.card{
+  width:90%;
+  max-width:380px;
+  background:rgba(0,0,0,0.92);
+  border:1px solid rgba(255,0,0,0.25);
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+
+  opacity:0;
+  transform:translateY(10px);
+  transition:1s;
+
+  box-shadow:0 0 30px rgba(255,0,0,0.15);
+  position:relative;
+}
+
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* AVATAR */
+.avatar{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* 👁️ OLHO */
+.eye-container{
+  width:45px;
+  height:30px;
+  margin:14px auto;
+  position:relative;
+  overflow:hidden;
+  border-radius:50%;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,0,0,0.2);
+}
+
+.eye-img{
+  width:160%;
+  height:160%;
+  object-fit:cover;
+  position:absolute;
+  top:-30%;
+  left:-30%;
+  transition:0.1s;
+}
+
+/* TEXTO */
+.owner{
+  margin-bottom:10px;
+  opacity:0.7;
+  font-size:1rem;
+  letter-spacing:2px;
+}
+
+#userName{
+  margin-top:10px;
+  font-size:1.4rem;
+}
+
+.quote{
+  margin-top:10px;
+  font-size:0.9rem;
+  opacity:0.7;
+  font-style:italic;
+  min-height:40px;
+}
+
+.links a{
+  display:block;
+  margin:8px 0;
+  padding:10px;
+  background:rgba(255,0,0,0.05);
+  border-radius:10px;
+  color:#fff;
+  text-decoration:none;
+}
+
+/* MUSIC */
+.music-control{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  background:rgba(0,0,0,0.6);
+  padding:8px;
+  border:1px solid rgba(255,0,0,0.2);
+  border-radius:10px;
+  z-index:20;
+}
+
+.music-control button{
+  background:rgba(255,0,0,0.1);
+  border:1px solid rgba(255,0,0,0.3);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.music-control input{
+  width:100px;
+  accent-color:red;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PARTICULAS -->
+<div class="particles"></div>
+
+<!-- 🩸 SANGUE REALISTA -->
+<div class="blood">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- MÚSICA -->
+<audio id="bgMusic" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-control">
+  <button onclick="toggleMusic()" id="musicBtn">▶ Tocar</button>
+  <input type="range" min="0" max="100" value="50" id="volumeControl">
+</div>
+
+<!-- CONTRATO -->
+<div class="contract-screen" id="contract">
+  <div class="contract-box">
+    <h2>Contrato</h2>
+    <div class="contract-text" id="contractText"></div>
+    <input type="text" id="nameInput" placeholder="Seu nome">
+    <button onclick="acceptContract()">Aceitar</button>
+  </div>
+</div>
+
+<!-- SITE -->
+<div class="card" id="site">
+
+<img src="makima.jpg" class="avatar">
+
+<h1 class="owner">kazumiya</h1>
+
+<h2 id="userName"></h2>
+
+<div class="eye-container">
+  <img src="eye.png" class="eye-img" id="eye">
+</div>
+
+<div class="quote" id="quote"></div>
+
+<div class="links">
+<a href="https://www.instagram.com/kekepages/" target="_blank">Instagram</a>
+<a href="#">Discord: ninhaosama</a>
+<a href="https://open.spotify.com/user/31xo2j75ovb73pgbokhoueukzfpy" target="_blank">Spotify</a>
+</div>
+
+</div>
+
+<script>
+
+let accepted = false;
+
+/* CONTRATO */
+const texts=[
+"Digite seu nome.",
+"Não minta.",
+"Eu já sei quem você é.",
+"Assine.",
+"Não há volta."
+];
+
+let t=0;
+
+setInterval(()=>{
+  if(!accepted){
+    document.getElementById("contractText").innerText = texts[t];
+    t = (t+1)%texts.length;
+  }
+},2000);
+
+/* MAKIMA */
+const quotes=[
+"Amor é apenas uma troca.",
+"Para mim, todos são iguais.",
+"Eu só quero criar um mundo melhor.",
+"Você não tem o direito de recusar.",
+"Isso não é um pedido."
+];
+
+function acceptContract(){
+  if(accepted) return;
+
+  const name = document.getElementById("nameInput").value.trim();
+  if(!name) return;
+
+  accepted = true;
+
+  document.getElementById("contract").style.opacity = 0;
+
+  setTimeout(()=>{
+    document.getElementById("contract").style.display = "none";
+    document.getElementById("site").classList.add("show");
+  },800);
+
+  showUser(name);
+}
+
+/* NOME + FRASES */
+function showUser(name){
+  const userName = document.getElementById("userName");
+  const quote = document.getElementById("quote");
+
+  userName.textContent = "";
+  quote.textContent = "";
+
+  let i = 0;
+
+  function typeName(){
+    if(i < name.length){
+      userName.textContent += name[i];
+      i++;
+      setTimeout(typeName,80);
+    } else {
+      showQuotes();
+    }
+  }
+
+  function showQuotes(){
+    let q = 0;
+
+    function nextQuote(){
+      quote.textContent = quotes[q];
+      q = (q + 1) % quotes.length;
+      setTimeout(nextQuote, 2500);
+    }
+
+    nextQuote();
+  }
+
+  typeName();
+}
+
+/* OLHO */
+const eye = document.getElementById("eye");
+
+let mouseX = 0, mouseY = 0;
+let currentX = 0, currentY = 0;
+
+document.addEventListener("mousemove",(e)=>{
+  mouseX = (e.clientX/window.innerWidth - 0.5) * 15;
+  mouseY = (e.clientY/window.innerHeight - 0.5) * 15;
+});
+
+function animate(){
+  currentX += (mouseX - currentX) * 0.08;
+  currentY += (mouseY - currentY) * 0.08;
+
+  eye.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+/* MÚSICA */
+const music = document.getElementById("bgMusic");
+const btn = document.getElementById("musicBtn");
+const volume = document.getElementById("volumeControl");
+
+music.volume = 0.5;
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    btn.textContent = "⏸ Pausar";
+  } else {
+    music.pause();
+    btn.textContent = "▶ Tocar";
+  }
+}
+
+volume.addEventListener("input",()=>{
+  music.volume = volume.value / 100;
+});
+
+window.addEventListener("click",()=>{
+  music.play().catch(()=>{});
+}, { once:true });
+
+</script>
+
+</body>
+</html>
