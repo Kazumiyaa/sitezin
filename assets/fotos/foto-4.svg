@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#0b0d14"/>
+      <stop offset=".55" stop-color="#293142"/>
+      <stop offset="1" stop-color="#8997b2"/>
+    </linearGradient>
+    <filter id="blur4">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg4)"/>
+  <circle cx="936" cy="144" r="144"
+          fill="#e6ecf8" opacity=".12" filter="url(#blur4)"/>
+  <circle cx="216" cy="624" r="192"
+          fill="#aab9d6" opacity=".1" filter="url(#blur4)"/>
+
+  <g fill="none" stroke="#ffffff" opacity=".09">
+    <path d="M0 160 L1200 680"/>
+    <path d="M0 336 L936 800"/>
+  </g>
+
+  <text x="96" y="576"
+        font-family="Arial, sans-serif" font-size="72"
+        fill="#f5f7fb" font-weight="700">FOTO 4</text>
+
+  <text x="102" y="632"
+        font-family="Arial, sans-serif" font-size="22"
+        fill="#d2d9e7" opacity=".75">troque por foto-4.jpg</text>
+
+  <text x="983" y="96"
+        font-family="Arial, sans-serif" font-size="44"
+        fill="#ffffff" opacity=".55">04</text>
+</svg>
