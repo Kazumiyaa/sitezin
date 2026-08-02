@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Meu cantinho pessoal: jogos, fotos, músicas e coisas que eu gosto."
+  />
+  <title>Kazumi — Zumi World</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="light light-one" aria-hidden="true"></div>
+  <div class="light light-two" aria-hidden="true"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <main class="site">
+    <header class="topbar">
+      <a class="logo" href="#inicio">Zu<span>mii</span></a>
+
+      <nav aria-label="Navegação principal">
+        <a href="#inicio">início</a>
+        <a href="#sobre">sobre</a>
+        <a href="#musica">música</a>
+        <a href="#jogos">jogos</a>
+        <a href="#fotos">fotos</a>
+        <a href="#links">links</a>
+      </nav>
+    </header>
+
+    <section class="hero panel" id="inicio">
+      <div class="hero-text">
+        <p class="small-title">UM PEDACINHO DOS MEUS PENSAMENTOS ESQUIZOFRÊNICOS ✦</p>
+
+        <h1>
+          Welcome<br>
+          <span>Babys.</span>
+        </h1>
+
+        <p class="hero-description">
+          Oieee, eu sou a Kazumi — ou Zumi, se preferir.
+          Espero que você se divirta nesse pedacinho caótico da minha cabeça ♡
+        </p>
+
+        <div class="hero-buttons">
+          <a class="button primary" href="#sobre">tente me descobrir</a>
+          <a class="button secondary" href="#fotos">minhas fotinhas ♡</a>
+        </div>
+      </div>
+
+      <div class="cover">
+        <img
+          src="assets/reze-capa.jpg"
+          alt="Imagem em tons escuros e azulados da Reze"
+        >
+        <div class="cover-gradient"></div>
+
+        <div class="cover-caption">
+          <span>pensamento aleatório</span>
+          <strong>Pelo menos me deixe sonhar um pouco.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-layout" id="sobre">
+      <article class="about-card panel">
+        <div class="section-title">
+          <span>01</span>
+          <div>
+            <p>UM POUCO SOBRE</p>
+            <h2>quem eu sou</h2>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="avatar">
+            <img
+              src="assets/fotos/foto-selfie.webp"
+              alt="Foto de perfil da Kazumi"
+            >
+          </div>
+
+          <div class="about-text">
+            <h3>Kazumi</h3>
+            <p class="subtitle">um mistério mal explicado ☾</p>
+
+            <p>
+              Essa parte vai continuar meio misteriosa.
+              Se quiser descobrir mais sobre mim, vai ter que conversar comigo —
+              algumas coisas são mais divertidas quando aparecem aos poucos ♡
+            </p>
+
+            <p class="edit-note">
+              ✦ cuidado: posso parecer normal nos primeiros cinco minutos.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article class="favorites-card panel">
+        <div class="section-title compact">
+          <span>♡</span>
+          <div>
+            <p>COISAS QUE EU GOSTO</p>
+            <h2>favoritos</h2>
+          </div>
+        </div>
+
+        <div class="favorite-list">
+          <div>
+            <small>anime favorito</small>
+            <strong>Toilet-bound Hanako-kun</strong>
+          </div>
+          <div>
+            <small>personagem favorito</small>
+            <strong>Sasuke</strong>
+          </div>
+          <div>
+            <small>cor favorita</small>
+            <strong>Azul</strong>
+          </div>
+          <div>
+            <small>clima favorito</small>
+            <strong>Friozinho</strong>
+          </div>
+          <div>
+            <small>estilo de música</small>
+            <strong>Geek</strong>
+          </div>
+          <div>
+            <small>comida favorita</small>
+            <strong>McDonald'sssss</strong>
+          </div>
+          <div>
+            <small>uma coisa que eu amo</small>
+            <strong>Ursinhos ♡</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="mood-card panel">
+        <span class="quote-mark">“</span>
+        <p>
+          Pelo menos me deixe<br>
+          sonhar um pouco.
+        </p>
+        <small>— Kazumi, provavelmente de madrugada ☾</small>
+      </article>
+    </section>
+
+
+    <section class="music-section panel" id="musica">
+      <div class="section-title">
+        <span>02</span>
+        <div>
+          <p>TRILHA SONORA DO CAOS</p>
+          <h2>tocando na Zumi World</h2>
+        </div>
+      </div>
+
+      <div class="music-player">
+        <div class="album-art">
+          <img
+            src="assets/reze-capa.jpg"
+            alt="Capa do player de música"
+          >
+          <div class="album-shade"></div>
+          <span class="album-disc" aria-hidden="true"></span>
+        </div>
+
+        <div class="track-panel">
+          <div class="now-playing">
+            <div class="equalizer" id="equalizer" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </div>
+            <small id="player-status">pronta para tocar</small>
+          </div>
+
+          <h3 id="track-title">Minha música do momento</h3>
+          <p id="track-artist">selecionada pela Minezinha ♡</p>
+
+          <div class="main-controls">
+            <button
+              class="play-button"
+              id="play-button"
+              type="button"
+              aria-label="Tocar música"
+              aria-pressed="false"
+            >
+              <span id="play-icon">▶</span>
+            </button>
+
+            <div class="timeline">
+              <input
+                id="music-progress"
+                type="range"
+                min="0"
+                max="100"
+                value="0"
+                step="0.1"
+                aria-label="Progresso da música"
+              >
+              <div class="time-row">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="volume-row">
+            <span aria-hidden="true">♪</span>
+            <label for="music-volume">volume</label>
+            <input
+              id="music-volume"
+              type="range"
+              min="0"
+              max="1"
+              value="0.55"
+              step="0.01"
+              aria-label="Volume da música"
+            >
+          </div>
+
+          <p class="music-help" id="music-help">
+            fecha os olhos e sente a aura ✦
+          </p>
+        </div>
+      </div>
+
+      <audio id="music-audio" preload="metadata" loop>
+        <source src="assets/musica.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <section class="games-section panel" id="jogos">
+      <div class="section-title">
+        <span>03</span>
+        <div>
+          <p>ONDE EU PASSO MEU TEMPO</p>
+          <h2>jogos favoritos</h2>
+        </div>
+      </div>
+
+      <div class="games-grid">
+        <article class="game-card valorant">
+          <div class="game-number">01</div>
+          <div class="game-icon image-icon">
+            <img
+              src="assets/icons/valorant-icon.webp"
+              alt="Ícone fofo usado no card de Valorant"
+            >
+          </div>
+
+          <div class="game-text">
+            <p>só pino</p>
+            <h3>Valorant</h3>
+            <span>
+              Sentinela de coração, Phantom na mão e absolutamente
+              nenhuma garantia de bala na cabeça. Dito isso: só pino.
+            </span>
+          </div>
+
+          <div class="game-info">
+            <span>função • arma</span>
+            <strong>Sentinela • Phantom</strong>
+          </div>
+        </article>
+
+        <article class="game-card minecraft">
+          <div class="game-number">02</div>
+          <div class="game-icon image-icon">
+            <img
+              src="assets/icons/minecraft-icon.webp"
+              alt="Ícone decorativo usado no card de Minecraft"
+            >
+          </div>
+
+          <div class="game-text">
+            <p>bloco por bloco</p>
+            <h3>Minecraft</h3>
+            <span>
+              Construo pra caralho e provavelmente começo uma obra
+              gigantesca sem saber quando vou terminar.
+            </span>
+          </div>
+
+          <div class="game-info">
+            <span>especialidade</span>
+            <strong>construir tudo ✦</strong>
+          </div>
+        </article>
+
+        <article class="game-card other">
+          <div class="game-number">03</div>
+          <div class="game-icon">♡</div>
+
+          <div class="game-text">
+            <p>aceito presentes</p>
+            <h3>Me dá um joguinho?</h3>
+            <span>
+              Se quiser me dar um joguinho, tem o Pix ali.
+              Prometo pensar em você por pelo menos cinco minutos.
+            </span>
+          </div>
+
+          <div class="game-info">
+            <span>incentivo moral</span>
+            <strong>LivePix ali embaixo ♡</strong>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="photos-section" id="fotos">
+      <div class="section-title centered">
+        <span>04</span>
+        <div>
+          <p>PEQUENAS MEMÓRIAS</p>
+          <h2>minhas fotos</h2>
+        </div>
+      </div>
+
+      <p class="section-description">
+        Pequenos pedaços da minha vida, algumas memórias
+        e surtos de autoestima que resolvi deixar por aqui ✦
+      </p>
+
+      <div class="photo-grid">
+        <button class="photo-card tall" type="button">
+          <img
+            src="assets/fotos/foto-jardim.webp"
+            alt="Jardim com lago, pedras, bambus e peixes"
+          >
+          <span>Amo carpinhas fofaas</span>
+        </button>
+
+        <button class="photo-card" type="button">
+          <img
+            src="assets/fotos/foto-chaveiro.webp"
+            alt="Chaveiro de crochê segurando um pirulito colorido"
+          >
+          <span>Literalmente eu</span>
+        </button>
+
+        <button class="photo-card" type="button">
+          <img
+            src="assets/fotos/foto-desenho.webp"
+            alt="Desenho feito à mão com peixe e flores vermelhas"
+          >
+          <span>eu já disse que amo carpinhas?</span>
+        </button>
+
+        <button class="photo-card wide selfie-photo" type="button">
+          <img
+            src="assets/fotos/foto-selfie.webp"
+            alt="Foto pessoal em ambiente escuro"
+          >
+          <span>Only me</span>
+        </button>
+        <button class="photo-card portrait-photo" type="button">
+          <img
+            src="assets/fotos/foto-selfie-clara.webp"
+            alt="Foto pessoal com cabelo escuro e mechas claras"
+          >
+          <span>Only us</span>
+        </button>
+
+      </div>
+    </section>
+
+    <section class="random-section panel">
+      <div class="section-title">
+        <span>05</span>
+        <div>
+          <p>SEM MUITA EXPLICAÇÃO</p>
+          <h2>mais coisas sobre mim</h2>
+        </div>
+      </div>
+
+      <div class="random-grid">
+        <div class="random-item">
+          <span>♡</span>
+          <small>meu conforto</small>
+          <strong>Ursinhos</strong>
+        </div>
+
+        <div class="random-item">
+          <span>✦</span>
+          <small>minha obsessão atual</small>
+          <strong>Sasuke</strong>
+        </div>
+
+        <div class="random-item">
+          <span>☾</span>
+          <small>algo que me deixa feliz</small>
+          <strong>McDonald'sssss</strong>
+        </div>
+
+        <div class="random-item">
+          <span>♪</span>
+          <small>trilha sonora da cabeça</small>
+          <strong>Música geek</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="links-section" id="links">
+      <div class="section-title centered">
+        <span>06</span>
+        <div>
+          <p>ME ENCONTRE POR AÍ</p>
+          <h2>meus links</h2>
+        </div>
+      </div>
+
+      <div class="links-grid">
+        <a class="social-link panel" href="https://instagram.com/Kekepages_x" target="_blank" rel="noreferrer">
+          <span class="social-symbol image-symbol">
+          <img
+            src="assets/icons/instagram-icon.webp"
+            alt="Ícone decorativo do Instagram"
+          >
+        </span>
+          <div>
+            <strong>Instagram</strong>
+            <small>@Kekepages_x</small>
+          </div>
+          <b>↗</b>
+        </a>
+
+        <a
+          class="social-link panel"
+          href="#"
+          data-copy="Ninhaosama"
+        >
+          <span class="social-symbol image-symbol">
+          <img
+            src="assets/icons/discord-icon.webp"
+            alt="Ícone decorativo do Discord"
+          >
+        </span>
+          <div>
+            <strong>Discord</strong>
+            <small id="discord-status">clique para copiar</small>
+          </div>
+          <b>⧉</b>
+        </a>
+
+        <a class="social-link panel" href="https://open.spotify.com/" target="_blank" rel="noreferrer">
+          <span class="social-symbol image-symbol">
+          <img
+            src="assets/icons/spotify-icon.webp"
+            alt="Ícone decorativo do Spotify"
+          >
+        </span>
+          <div>
+            <strong>Spotify</strong>
+            <small>Minezinha</small>
+          </div>
+          <b>↗</b>
+        </a>
+
+
+        <a
+          class="social-link panel livepix-link"
+          href="https://livepix.gg/zuzumiw"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span class="social-symbol livepix-symbol">♡</span>
+          <div>
+            <strong>LivePix</strong>
+            <small>me paga um docinho aí ♡</small>
+          </div>
+          <b>↗</b>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <p>feito por <strong>Kazumi</strong> com sonhos, caos e um pouco de insônia ♡</p>
+      <a href="#inicio">voltar ao início ↑</a>
+    </footer>
+  </main>
+
+  <div class="modal" id="photo-modal" aria-hidden="true">
+    <button id="close-modal" type="button" aria-label="Fechar foto">×</button>
+    <img id="modal-image" src="" alt="">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
